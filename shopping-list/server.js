@@ -10,9 +10,10 @@ module.exports = ()=>{
     const webpackDevMiddleware = require('webpack-dev-middleware')
     const webpackConfig = require('./webpack.config.js')
     app.use(webpackDevMiddleware(webpack(webpackConfig)))
-
+    app.use(express.static(__dirname + '/public'))
+    
     app.get('/*', function(req, res){
-        res.sendFile(path.resolve('html/index.html'));
+        res.sendFile(path.resolve('public/index.html'));
     });
 
 

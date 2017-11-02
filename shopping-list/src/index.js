@@ -3,8 +3,7 @@ const electron = require('electron');
 const ul = document.querySelector('ul');
 const React = require('react');
 import { render } from 'react-dom'
-import App from './app'
-
+import App from './components/app'
 render(
     <App />,
     document.getElementById('app')

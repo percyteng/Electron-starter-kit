@@ -3,10 +3,10 @@ var webpack = require('webpack');
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
-    entry: __dirname+ "/js",
+    entry: __dirname+ "/src",
     target:'electron-renderer',
     output: {
-        path: path.resolve(__dirname, 'assets/scripts'),
+        path: path.resolve(__dirname, 'public/scripts'),
         publicPath:'/',
         filename: 'bundle.js'
     },
@@ -21,8 +21,12 @@ module.exports = {
                 }
             },
             {
-              test: /\.css$/,
-              loader: 'style!css',
+                test: /\.css$/,
+                loader: 'style-loader!css-loader',
+                query: {
+                    modules: true,
+                    localIdentName: '[name]__[local]___[hash:base64:5]'
+                }
             },
         ]
     },

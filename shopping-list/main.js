@@ -42,7 +42,7 @@ function createWindow(){
     else{
     //production mode
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'html/index.html'),
+        pathname: path.join(__dirname, 'public/index.html'),
         protocol: 'file:',
         slashes: true
     }));
@@ -59,7 +59,7 @@ function createAddWindow(){
     addWindow = new BrowserWindow({width: 300, height: 200});
     // load html file into the window
     addWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'html/addWindow.html'),
+        pathname: path.join(__dirname, 'public/addWindow.html'),
         protocol: 'file:',
         slashes: true
     }));
