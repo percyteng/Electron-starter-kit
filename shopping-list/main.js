@@ -1,9 +1,9 @@
 const electron = require('electron')
 const url = require('url');
 const path = require('path');
-
 const {app, BrowserWindow, Menu, ipcMain} = electron;
 
+const startServer = require('./server')
 //SET ENV
 // process.env.NODE_ENV='production';
 let mainWindow, addWindow;
@@ -26,6 +26,8 @@ app.on('activate', () => {
     }
 })
 function createWindow(){
+    //start webpack server
+    startServer();
     //create new window
     mainWindow = new BrowserWindow({width: 800, height: 600});
     // load html file into the window
@@ -34,11 +36,17 @@ function createWindow(){
     mainWindow.on('close', ()=>{
         app.quit();
     })
+    //development mode
+    if (process.env.NODE_ENV != 'production')
+        mainWindow.loadURL('http://localhost:4000');
+    else{
+    //production mode
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'html/index.html'),
         protocol: 'file:',
         slashes: true
     }));
+    }
 
     // Build menu from template
     const mainMenu = Menu.buildFromTemplate(mainMenuTemp);

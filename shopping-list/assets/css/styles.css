@@ -1,0 +1,59 @@
+#calendarPic{
+    height: 100px;
+    width: 100px;
+    margin-top: 5%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+input[type=checkbox]
+{
+  -webkit-appearance:checkbox;
+  position: relative !important;
+  opacity: 1 !important;
+  pointer-events: initial !important;
+}
+html{
+    width: 100%;
+    min-height: 100vh;
+}
+body{
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+}
+.container{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    background-color: #fcfcfc;
+    flex-direction: column;
+    align-items: center;
+}
+#loginSection{
+    width: 40%;
+    margin-top: 30px;
+}
+#loginSection input{
+    font-size: 15px;    
+    border-bottom: 1.2px solid #ccc;
+}
+#loginSection button{
+    border: none;
+    height: 50px;
+    width: 100px;
+    margin-top: 30px;
+    font-size: 17px;
+    border-radius: 3px;
+    background-color: #3ebca5;
+    color: #fff;
+}
+#rememberLogIn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a5a5a5;
+}
+#rememberLogin p{
+    margin-left: 10px;
+}
